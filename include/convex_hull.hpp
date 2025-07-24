@@ -1,5 +1,5 @@
-#ifndef CONVEX_HULL_H
-#define CONVEX_HULL_H
+#ifndef CONVEX_HULL_HPP
+#define CONVEX_HULL_HPP
 
 #include <vector>
 #include <iostream>
@@ -41,11 +41,20 @@ public:
     // קריאת נקודות מקובץ
     bool readPointsFromFile(const std::string& filename);
     
+    // קריאת נקודות מ-stdin (עבור שלב 1)
+    bool readPointsFromStdin();
+    
     // חישוב המעטפת הקמורה
     void calculateConvexHull();
     
     // שמירת התוצאות לקובץ
     bool writeResultToFile(const std::string& filename) const;
+    
+    // הדפסת התוצאות ל-stdout (עבור שלב 1)
+    void printResultToStdout() const;
+    
+    // חישוב שטח המעטפת הקמורה
+    double calculateArea() const;
     
     // הדפסת התוצאות
     void printResult() const;
@@ -54,4 +63,4 @@ public:
     const std::vector<Point>& getHull() const;
 };
 
-#endif // CONVEX_HULL_H
+#endif // CONVEX_HULL_HPP

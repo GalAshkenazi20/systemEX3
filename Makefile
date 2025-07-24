@@ -25,17 +25,17 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 clean:
 	rm -rf $(OBJDIR) $(TARGET)
 
-# הרצה עם קובץ ברירת מחדל
+# הרצה רגילה
 run: $(TARGET)
 	./$(TARGET)
 
-# הרצה עם קובץ מותאם אישית
-run-custom: $(TARGET)
-	./$(TARGET) $(INPUT) $(OUTPUT)
+# הרצה עם קלט מקובץ
+run-with-file: $(TARGET)
+	./$(TARGET) < input/step1_test.txt
 
 # יצירת תיקיות הדרושות
 setup:
 	mkdir -p $(OBJDIR) input output
 
 # יעדים פיקטיביים
-.PHONY: all clean run run-custom setup
+.PHONY: all clean run run-with-file setup
