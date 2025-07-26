@@ -84,7 +84,8 @@ void ConvexHullInteractive::newGraph(int n) {
     
     for (int i = 0; i < n; i++) {
         double x, y;
-        std::cin >> x >> y;
+        char comma;
+        std::cin >> x >> comma >> y;  // קריאה עם פסיק מפריד
         points.emplace_back(x, y);
     }
 }
@@ -122,12 +123,14 @@ void ConvexHullInteractive::processCommands() {
         }
         else if (command == "Newpoint") {
             double x, y;
-            std::cin >> x >> y;
+            char comma;
+            std::cin >> x >> comma >> y;
             newPoint(x, y);
         }
         else if (command == "Removepoint") {
             double x, y;
-            std::cin >> x >> y;
+            char comma;
+            std::cin >> x >> comma >> y;
             removePoint(x, y);
         }
     }

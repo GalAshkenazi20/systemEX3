@@ -17,7 +17,7 @@ DEMO_SOURCES = simple_demo.cpp
 DEMO_OBJECTS = $(DEMO_SOURCES:%.cpp=$(OBJDIR)/%.o)
 DEMO_TARGET = simple_demo
 
-all: $(STATIC_LIB) $(SHARED_LIB) $(TEST_TARGET) $(DEMO_TARGET)
+all: $(STATIC_LIB) $(SHARED_LIB) $(TEST_TARGET)
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)

@@ -22,3 +22,5 @@ int runReactor(void* reactor);
 #ifdef __cplusplus
 }
 #endif
+
+#endif // REACTOR_HPP

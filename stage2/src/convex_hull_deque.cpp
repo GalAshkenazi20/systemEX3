@@ -57,7 +57,8 @@ bool ConvexHullDeque::readPointsFromStdin() {
     
     for (int i = 0; i < n; i++) {
         double x, y;
-        std::cin >> x >> y;
+        char comma;
+        std::cin >> x >> comma >> y;  // קריאה עם פסיק מפריד
         points.emplace_back(x, y);
     }
     

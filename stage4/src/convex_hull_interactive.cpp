@@ -117,7 +117,8 @@ std::string ConvexHullInteractive::processCommand(const std::string& command) {
         
         for (int i = 0; i < n; i++) {
             double x, y;
-            iss >> x >> y;
+            char comma;
+            iss >> x >> comma >> y;  // קריאה עם פסיק מפריד
             newPoints.emplace_back(x, y);
         }
         
@@ -129,13 +130,15 @@ std::string ConvexHullInteractive::processCommand(const std::string& command) {
     }
     else if (cmd == "Newpoint") {
         double x, y;
-        iss >> x >> y;
+        char comma;
+        iss >> x >> comma >> y;
         newPoint(x, y);
         return "Point (" + std::to_string(x) + ", " + std::to_string(y) + ") added\n";
     }
     else if (cmd == "Removepoint") {
         double x, y;
-        iss >> x >> y;
+        char comma;
+        iss >> x >> comma >> y;
         removePoint(x, y);
         return "Point (" + std::to_string(x) + ", " + std::to_string(y) + ") removed\n";
     }
